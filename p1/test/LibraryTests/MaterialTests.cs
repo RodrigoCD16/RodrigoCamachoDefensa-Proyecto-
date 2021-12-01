@@ -18,7 +18,7 @@ namespace Ucu.Poo.Defense.Tests
         public void TestCreateNonDangerousMaterial()
         {
             Material material = new Material("Non dangerous material", nonDangerousType);
-            Assert.That(material.IsDangerous, Is.False);
+            Assert.That(material.Type.IsDangerous, Is.False);
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace Ucu.Poo.Defense.Tests
         {
             Material material = new Material("Dangerous material", dangerousType);
 
-            Assert.That(material.IsDangerous, Is.True);
+            Assert.That(material.Type.IsDangerous, Is.True);
 
         }
     }
