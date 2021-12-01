@@ -7,6 +7,8 @@ namespace Ucu.Poo.Defense
 {
     public class Publication
     {
+
+        public string listaitems;
         public DateTime EndDate { get; set; }
 
         public IReadOnlyCollection<PublicationItem> Items
@@ -33,5 +35,15 @@ namespace Ucu.Poo.Defense
         {
             this.items.Remove(item);
         }
+        public string AsText()
+        {
+            foreach (PublicationItem item in items)
+            {
+                listaitems += $"{item.Material}";
+            }
+            
+            return listaitems;
+        }
+        
     }
 }
